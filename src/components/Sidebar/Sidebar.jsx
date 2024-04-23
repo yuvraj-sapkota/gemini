@@ -23,7 +23,7 @@ function Sidebar() {
 
           <div className="new-chat">
             <IoMdAdd className="icon" />
-            {extended ? <p>New Chat</p> : null}
+            {extended ? <p>New Chats</p> : null}
           </div>
           {extended ? (
             <div className="recent">
