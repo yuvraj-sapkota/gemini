@@ -5,10 +5,12 @@ import { FaMessage } from "react-icons/fa6";
 import { FaRegQuestionCircle } from "react-icons/fa";
 import { MdHistory } from "react-icons/md";
 import { CiSettings } from "react-icons/ci";
-import { useState } from "react";
+import { useContext, useState } from "react";
+import { Context } from "../../context/context";
 
 function Sidebar() {
   const [extended, setExtended] = useState(false);
+  const { onSent, prevPrompt, setRecnetPromt } = useContext(Context);
 
   return (
     <>
@@ -28,10 +30,14 @@ function Sidebar() {
           {extended ? (
             <div className="recent">
               <p className="recent-title">Recent</p>
-              <div className="recent-entry">
-                <FaMessage className="icon" />
-                <p>What is react</p>
-              </div>
+              {prevPrompt.map((item, index) => {
+                return (
+                  <div className="recent-entry">
+                    <FaMessage className="icon" />
+                    <p>{item.slice(0, 18)}...</p>
+                  </div>
+                );
+              })}
             </div>
           ) : null}
         </div>

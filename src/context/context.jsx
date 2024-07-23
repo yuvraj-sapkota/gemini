@@ -25,7 +25,7 @@ const ContextProvider = (props) => {
     setprevPrompt((prev) => [...prev, input]);
     const response = await runChat(input);
     let responseArray = response.split("**");
-    let newResponse;
+    let newResponse = "";
     for (let i = 0; i < responseArray.length; i++) {
       if (i === 0 || i % 2 !== 1) {
         newResponse += responseArray[i];
@@ -35,8 +35,7 @@ const ContextProvider = (props) => {
     }
     let newResponse2 = newResponse.split("*").join("</br>");
 
-    let newResponse3 = newResponse2.split("1").join("</br>");
-    let newResponseArray = newResponse3.split(" ");
+    let newResponseArray = newResponse2.split(" ");
     for (let i = 0; i < newResponseArray.length; i++) {
       const nextWord = newResponseArray[i];
       delayPara(i, nextWord + " ");
