@@ -5,10 +5,11 @@
   justify-content: space-between;
   background-color: #f0f4f9;
   padding: 25px 15px;
+  width: 250px; /* Adjust width for better layout */
+  transition: width 0.3s ease;
 }
 
 .sidebar .icon {
-  /* border: 2px solid black; */
   font-size: 30px;
 }
 
@@ -65,4 +66,54 @@
 .sidebar .bottom-item {
   padding-right: 10px;
   cursor: pointer;
+}
+
+/* Media queries for responsiveness */
+@media (max-width: 800px) {
+  .sidebar {
+    width: 100px; /* Adjust width for tablet view */
+    padding: 20px 10px;
+  }
+
+  .sidebar .new-chat {
+    margin-top: 30px;
+    padding: 8px 12px;
+  }
+
+  .sidebar .recent-entry {
+    padding: 8px;
+    padding-right: 30px;
+  }
+}
+
+@media (max-width: 480px) {
+  .sidebar {
+    width: 60px; /* Collapse the sidebar for mobile view */
+    padding: 15px 5px;
+  }
+
+  .sidebar .icon {
+    font-size: 25px;
+  }
+
+  .sidebar .new-chat {
+    margin-top: 20px;
+    padding: 6px 10px;
+  }
+
+  .sidebar .new-chat p,
+  .sidebar .bottom-item p,
+  .sidebar .recent-title,
+  .sidebar .recent-entry p {
+    display: none; /* Hide text labels in mobile view */
+  }
+
+  .sidebar .recent-entry {
+    padding: 6px;
+    padding-right: 20px;
+  }
+
+  .sidebar .bottom-item {
+    padding-right: 5px;
+  }
 }

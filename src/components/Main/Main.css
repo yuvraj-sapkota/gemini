@@ -83,7 +83,9 @@
   background-color: #f0f4f9;
   position: fixed;
   bottom: 0;
-  width: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .search-box {
@@ -93,6 +95,9 @@
   background-color: #f0f4f9;
   padding: 10px 20px;
   border-radius: 50px;
+  width: 100%;
+  max-width: 600px;
+  box-sizing: border-box;
 }
 
 .search-box input {
@@ -184,9 +189,6 @@
 
 /* Responsive styles */
 @media (max-width: 900px) {
-  .cards {
-    visibility: hidden;
-  }
   .main .greet {
     font-size: 40px;
   }
@@ -202,41 +204,32 @@
   .main .card .card-icon {
     font-size: 25px;
   }
-  /* .search-box {
-    border: 2px solid red;
-  } */
 
   .search-box input {
     font-size: 16px;
   }
 
   .main-bottom {
-    height: 100px;
-    margin-bottom: 20px;
     width: auto;
   }
+
   .main .bottom-info {
     font-size: 12px;
-    visibility: hidden;
   }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 768px) {
   .main .nav {
-    font-size: 18px;
+    font-size: 20px;
     padding: 15px;
   }
 
   .main .greet {
-    font-size: 28px;
-  }
-
-  .main .cards {
-    grid-template-columns: 1fr;
+    font-size: 36px;
   }
 
   .main .card {
-    height: 160px;
+    height: 100px;
   }
 
   .main .card p {
@@ -262,5 +255,63 @@
 
   .main .bottom-info {
     font-size: 11px;
+  }
+
+  .main-bottom {
+    padding: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .main .nav {
+    font-size: 18px;
+    padding: 10px;
+  }
+
+  .main .greet {
+    font-size: 28px;
+  }
+
+  .main .cards {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .main .card {
+    height: 140px;
+    visibility: hidden;
+  }
+
+  .main .card p {
+    font-size: 13px;
+  }
+
+  .main .card .card-icon {
+    font-size: 18px;
+  }
+
+  .search-box {
+    gap: 5px;
+    padding: 5px;
+    width: 100%;
+  }
+
+  .search-box input {
+    font-size: 12px;
+  }
+
+  .search-box-icon {
+    font-size: 14px;
+  }
+
+  .main .bottom-info {
+    font-size: 10px;
+    visibility: hidden;
+  }
+
+  .main-bottom {
+    padding: 10px;
+    flex-direction: column;
+    align-items: center;
   }
 }
