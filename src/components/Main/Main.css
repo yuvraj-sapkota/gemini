@@ -83,6 +83,7 @@
   background-color: #f0f4f9;
   position: fixed;
   bottom: 0;
+  width: auto;
 }
 
 .search-box {
@@ -182,7 +183,10 @@
 }
 
 /* Responsive styles */
-@media (max-width: 768px) {
+@media (max-width: 900px) {
+  .cards {
+    visibility: hidden;
+  }
   .main .greet {
     font-size: 40px;
   }
@@ -198,13 +202,22 @@
   .main .card .card-icon {
     font-size: 25px;
   }
+  /* .search-box {
+    border: 2px solid red;
+  } */
 
   .search-box input {
     font-size: 16px;
   }
 
+  .main-bottom {
+    height: 100px;
+    margin-bottom: 20px;
+    width: auto;
+  }
   .main .bottom-info {
     font-size: 12px;
+    visibility: hidden;
   }
 }
 
