@@ -1,12 +1,13 @@
 .sidebar {
-  min-height: 100vh;
-  display: inline-flex;
+  height: 100vh;
+  display: flex;
   flex-direction: column;
   justify-content: space-between;
   background-color: #f0f4f9;
   padding: 25px 15px;
   width: 250px; /* Adjust width for better layout */
   transition: width 0.3s ease;
+  overflow-y: auto; /* Allow vertical scrolling */
 }
 
 .sidebar .icon {
@@ -60,7 +61,6 @@
 .sidebar .bottom {
   display: flex;
   flex-direction: column;
-  justify-content: center;
 }
 
 .sidebar .bottom-item {
@@ -73,10 +73,6 @@
   .sidebar {
     width: 100px; /* Adjust width for tablet view */
     padding: 20px 10px;
-  }
-
-  .bottom {
-    visibility: hidden;
   }
 
   .sidebar .new-chat {
